@@ -1,5 +1,5 @@
-# 32 bits ubuntu 14.04 base image
-FROM i386/ubuntu:14.04
+# 32 bits ubuntu 18.04 base image
+FROM i386/ubuntu:18.04
 
 # Install build tools and libraries
 RUN apt-get -q update &&\
@@ -7,5 +7,5 @@ RUN apt-get -q update &&\
 	rm -rf /var/lib/apt/lists/*
 
 # Install recent CMake
-RUN curl -sSL https://cmake.org/files/v3.6/cmake-3.6.3-Linux-i386.tar.gz | tar -xzC /opt &&\
+RUN curl -sSL https://cmake.org/files/v3.6/cmake-3.6.3-Linux-i386.tar.gz -k | tar -xzC /opt &&\
 	ln -s /opt/cmake-3.6.3-Linux-i386/bin/cmake /usr/local/bin/cmake
